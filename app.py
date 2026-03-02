@@ -1,6 +1,8 @@
+# app.py
 from flask import Flask, render_template, request
 from chatbot import get_song_query
-from automation import play_song_on_youtube
+from selenium_player import play_song_on_youtube
+import threading
 
 app = Flask(__name__)
 
@@ -10,7 +12,10 @@ def home():
     if request.method == "POST":
         user_input = request.form.get("user_input")
         song = get_song_query(user_input)
-        play_song_on_youtube(song)  # Opens song in browser automatically
+
+        # Use a thread so Flask doesn't block while Selenium runs
+        threading.Thread(target=play_song_on_youtube, args=(song,)).start()
+
     return render_template("index.html", song=song)
 
 if __name__ == "__main__":
