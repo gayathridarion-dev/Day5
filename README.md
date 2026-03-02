@@ -23,4 +23,3 @@ This project is a full-stack **Song Recommender System** built using **Flask, Se
 
 ---
 
-## **Project Structure**
