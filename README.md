@@ -1,6 +1,3 @@
-Perfect! Here's a **polished, professional README content** for your GitHub portfolio—**without code blocks**, ready to paste:
-
----
 
 # 🎵 Chatbot Song Recommender
 
